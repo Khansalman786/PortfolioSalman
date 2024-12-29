@@ -5,6 +5,7 @@ import ProjectSection from "./components/ProjectSection";
 // import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExpriencedSection";
 import ContactSection from "./components/ContactSection";
+import FooterSection from "./components/FooterSection";
 
 const App = () => {
   return (
@@ -28,9 +29,11 @@ const App = () => {
         {/* Exprienced sections  */}
         <ExperienceSection />
 
-        {/* Exprienced sections  */}
+        {/* Contact sections  */}
         <ContactSection />
 
+        {/* Contact sections  */}
+        <FooterSection />
         {/* Other sections remain the same... */}
       </div>
     </div>
