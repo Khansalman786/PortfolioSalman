@@ -9,7 +9,7 @@ import ContactSection from "./components/ContactSection";
 const App = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation remains the same... */}
+      {/* Navigation Section*/}
       <NavBar />
 
       <div className="pt-16">
