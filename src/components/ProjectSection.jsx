@@ -1,16 +1,4 @@
-import {
-  Code,
-  Briefcase,
-  User,
-  Folder,
-  Mail,
-  Menu,
-  X,
-  Phone,
-  Download,
-  ExternalLink,
-  Github,
-} from "lucide-react";
+import { Folder, ExternalLink, Github } from "lucide-react";
 
 const ProjectSection = () => {
   // Project data with more details
@@ -36,7 +24,8 @@ const ProjectSection = () => {
       description:
         "Collaborative task management platform with real-time updates and team workspace features.",
       tech: ["React", "Firebase", "Tailwind CSS"],
-      image: "https://www.chanty.com/blog/wp-content/uploads/2020/10/Task-manager-apps-740x380.jpg",
+      image:
+        "https://www.chanty.com/blog/wp-content/uploads/2020/10/Task-manager-apps-740x380.jpg",
       github: "#",
       demo: "#",
       features: [
@@ -51,7 +40,8 @@ const ProjectSection = () => {
       description:
         "Interactive weather visualization dashboard with historical data analysis and forecast predictions.",
       tech: ["React", "Chart.js", "Weather API"],
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGfVh0sb2Lcgub4A929xVUH4eE-H7ETsDzg&s",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGfVh0sb2Lcgub4A929xVUH4eE-H7ETsDzg&s",
       github: "#",
       demo: "#",
       features: [

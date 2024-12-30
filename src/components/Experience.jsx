@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaBriefcase } from 'react-icons/fa';
 
-const ExperienceSection = () => {
+const Experience = () => {
   const experiences = [
     {
       role: 'Frontend Developer',
@@ -55,4 +55,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;
+export default Experience;

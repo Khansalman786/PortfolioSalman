@@ -1,68 +1,139 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Code2, Database, Globe, Layers, Palette, Server, ChevronDown, ChevronUp } from 'lucide-react';
 
 const SkillsSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   const skills = [
     {
-      category: "Frontend",
+      category: "Frontend Development",
+      icon: <Code2 className="w-6 h-6" />,
       items: [
-        { name: "React/Next.js", level: 90 },
-        { name: "JavaScript/TypeScript", level: 85 },
-        { name: "HTML/CSS/Tailwind", level: 95 },
-      ],
+        { name: "React", level: 90 },
+        { name: "JavaScript", level: 85 },
+        { name: "TypeScript", level: 80 },
+        { name: "HTML5/CSS3", level: 95 }
+      ]
     },
     {
-      category: "Backend",
+      category: "UI/UX",
+      icon: <Palette className="w-6 h-6" />,
       items: [
-        { name: "Node.js/Express", level: 85 },
-        { name: "Python/Django", level: 80 },
-        { name: "REST/GraphQL", level: 85 },
-      ],
+        { name: "Tailwind CSS", level: 88 },
+        { name: "Material UI", level: 82 },
+        { name: "Responsive Design", level: 92 },
+        { name: "CSS Animation", level: 78 }
+      ]
     },
     {
-      category: "Database & DevOps",
+      category: "Backend Development",
+      icon: <Server className="w-6 h-6" />,
       items: [
-        { name: "SQL/NoSQL", level: 85 },
-        { name: "Docker/AWS", level: 80 },
-        { name: "Git/CI-CD", level: 90 },
-      ],
+        { name: "Node.js", level: 85 },
+        { name: "Express", level: 82 },
+        { name: "RESTful APIs", level: 88 },
+        { name: "GraphQL", level: 75 }
+      ]
     },
+    {
+      category: "Database",
+      icon: <Database className="w-6 h-6" />,
+      items: [
+        { name: "MongoDB", level: 86 },
+        { name: "PostgreSQL", level: 84 },
+        { name: "Redis", level: 78 },
+        { name: "Firebase", level: 80 }
+      ]
+    },
+    {
+      category: "Web Technologies",
+      icon: <Globe className="w-6 h-6" />,
+      items: [
+        { name: "Git", level: 90 },
+        { name: "Webpack", level: 82 },
+        { name: "Docker", level: 85 },
+        { name: "AWS", level: 80 }
+      ]
+    },
+    {
+      category: "Architecture",
+      icon: <Layers className="w-6 h-6" />,
+      items: [
+        { name: "Microservices", level: 85 },
+        { name: "CI/CD", level: 82 },
+        { name: "Design Patterns", level: 88 },
+        { name: "System Design", level: 84 }
+      ]
+    }
   ];
 
-  return (
-    <div className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-      <h2 className="text-3xl font-extrabold text-gray-800 mb-8 text-center">
-        Technical Skills
-      </h2>
-      <div className="space-y-10">
-        {skills.map((skillGroup, groupIndex) => (
-          <div key={groupIndex} className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-700 border-b-2 border-blue-500 pb-3">
-              {skillGroup.category}
-            </h3>
-            <div className="space-y-4">
-              {skillGroup.items.map((skill, skillIndex) => (
-                <div key={skillIndex} className="group">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-base text-gray-700 font-medium">
-                      {skill.name}
-                    </span>
-                    <span className="text-sm text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {skill.level}%
-                    </span>
-                  </div>
-                  <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-blue-500 to-blue-700 transform origin-left transition-transform duration-500 ease-out hover:from-blue-600 hover:to-blue-800"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+  const SkillBar = ({ name, level }) => (
+    <div className="mb-4">
+      <div className="flex justify-between mb-1">
+        <span className="text-sm font-medium text-gray-700">{name}</span>
+        <span className="text-sm font-medium text-gray-500">{level}%</span>
+      </div>
+      <div className="w-full bg-gray-200 rounded-full h-2.5">
+        <div 
+          className="h-2.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-1000 ease-out"
+          style={{ width: `${level}%` }}
+        ></div>
       </div>
     </div>
+  );
+
+  const handleCategoryClick = (index) => {
+    setSelectedCategory(selectedCategory === index ? null : index);
+  };
+
+  return (
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Technical Skills
+        </h2>
+        <p className="text-center text-gray-600 mb-12">Expertise across the full stack development spectrum</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skillGroup, index) => (
+            <div 
+              key={index}
+              className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300
+                ${selectedCategory === index ? 'ring-2 ring-blue-400' : ''}`}
+            >
+              <button
+                className="w-full p-6 text-left focus:outline-none"
+                onClick={() => handleCategoryClick(index)}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="p-2 bg-blue-100 rounded-lg mr-4">
+                      {skillGroup.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold">{skillGroup.category}</h3>
+                  </div>
+                  {selectedCategory === index ? 
+                    <ChevronUp className="w-5 h-5 text-gray-500" /> :
+                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                  }
+                </div>
+              </button>
+              
+              <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out
+                ${selectedCategory === index ? 'max-h-96 pb-6' : 'max-h-0'}`}>
+                {skillGroup.items.map((skill, skillIndex) => (
+                  <SkillBar
+                    key={skillIndex}
+                    name={skill.name}
+                    level={skill.level}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
