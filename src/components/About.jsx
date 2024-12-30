@@ -21,21 +21,23 @@ const AboutSection = () => {
               <h2 className="text-3xl font-bold text-gray-900">About Me</h2>
             </div>
             <p className="text-lg text-gray-600 mb-6">
-              I'm a passionate frontend developer with 5+ years of experience in
-              building modern web applications. My journey in web development
-              started with curiosity and has evolved into a professional career
-              focused on creating intuitive and performant user interfaces.
+              Motivated and enthusiastic MERN Stack Developer with strong
+              foundation in web development & passion for creating innovative
+              and user-friendly applications using MongoDB, Express.js,
+              React.js, & Node.js. Recently completed graduation with hands-on
+              experience in developing projects and internships that demonstrate
+              proficiency in front-end and back-end technologies.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="font-bold text-gray-700 mb-2">Education</h3>
-                <p className="text-gray-600">B.S. Computer Science</p>
-                <p className="text-gray-500">Tech University</p>
+                <p className="text-gray-600">B.E. Computer Engineering</p>
+                <p className="text-gray-500">Mumbai University</p>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="font-bold text-gray-700 mb-2">Location</h3>
-                <p className="text-gray-600">San Francisco, CA</p>
-                <p className="text-gray-500">Available for remote work</p>
+                <p className="text-gray-600">Maharashtra, Mumbai</p>
+                <p className="text-gray-500">Available for work</p>
               </div>
             </div>
             <div className="flex gap-4">
