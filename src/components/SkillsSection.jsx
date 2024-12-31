@@ -70,12 +70,12 @@ const SkillsSection = () => {
   const SkillBar = ({ name, level }) => (
     <div className="mb-4">
       <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium text-gray-700">{name}</span>
-        <span className="text-sm font-medium text-gray-500">{level}%</span>
+        <span className="text-sm font-medium text-gray-300">{name}</span>
+        <span className="text-sm font-medium text-gray-400">{level}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
+      <div className="w-full bg-gray-700 rounded-full h-2.5">
         <div 
-          className="h-2.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-1000 ease-out"
+          className="h-2.5 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-1000 ease-out"
           style={{ width: `${level}%` }}
         ></div>
       </div>
@@ -87,18 +87,18 @@ const SkillsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="py-16 bg-black text-gray-200">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
           Technical Skills
         </h2>
-        <p className="text-center text-gray-600 mb-12">Expertise across the full stack development spectrum</p>
+        <p className="text-center text-gray-400 mb-12">Expertise across the full stack development spectrum</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
             <div 
               key={index}
-              className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300
+              className={`bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300
                 ${selectedCategory === index ? 'ring-2 ring-blue-400' : ''}`}
             >
               <button
@@ -107,14 +107,14 @@ const SkillsSection = () => {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <div className="p-2 bg-blue-100 rounded-lg mr-4">
+                    <div className="p-2 bg-gray-700 rounded-lg mr-4">
                       {skillGroup.icon}
                     </div>
-                    <h3 className="text-xl font-semibold">{skillGroup.category}</h3>
+                    <h3 className="text-xl font-semibold text-gray-300">{skillGroup.category}</h3>
                   </div>
                   {selectedCategory === index ? 
-                    <ChevronUp className="w-5 h-5 text-gray-500" /> :
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                    <ChevronUp className="w-5 h-5 text-gray-400" /> :
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
                   }
                 </div>
               </button>

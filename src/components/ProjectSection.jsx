@@ -1,119 +1,171 @@
-import { Folder, ExternalLink, Github } from "lucide-react";
+import React, { useState } from "react";
+import { Folder, Eye, Github } from "lucide-react";
 
 const ProjectSection = () => {
-  // Project data with more details
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const projects = [
     {
       title: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce solution with real-time inventory management, payment processing, and user authentication.",
-      tech: ["React", "Redux", "Node.js", "MongoDB"],
+      tech: ["React", "Redux", "Node.js"],
+      category: "Web",
       image:
-        "https://etimg.etb2bimg.com/thumb/msid-90659925,imgsize-119622,width-1200,height=765,overlay-etgovernment/news/governance/rajasthan-govt-to-create-e-commerce-platform-under-rajeevika-project.jpg",
+        "https://images.yourstory.com/cs/2/fb7ee200-7579-11e9-995c-171c030e4eb8/Ecomm-min1560422084936.jpg?fm=png&auto=format",
       github: "#",
       demo: "#",
-      features: [
-        "User authentication and authorization",
-        "Payment gateway integration",
-        "Real-time inventory tracking",
-        "Admin dashboard",
-      ],
     },
     {
-      title: "Task Management App",
-      description:
-        "Collaborative task management platform with real-time updates and team workspace features.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
+      title: "Tech Blog Platform",
+      tech: ["Next.js", "MDX", "Tailwind"],
+      category: "Blog",
       image:
-        "https://www.chanty.com/blog/wp-content/uploads/2020/10/Task-manager-apps-740x380.jpg",
+        "https://pascalinesoft.com/wp-content/uploads/elementor/thumbs/Soft-Solution-Services-pop8cblnkldrx0tmcyehvb7unole5mto0a3u3724y0.jpg",
       github: "#",
       demo: "#",
-      features: [
-        "Real-time collaboration",
-        "Task assignment and tracking",
-        "Project timeline visualization",
-        "File sharing",
-      ],
     },
     {
       title: "Weather Dashboard",
-      description:
-        "Interactive weather visualization dashboard with historical data analysis and forecast predictions.",
-      tech: ["React", "Chart.js", "Weather API"],
+      tech: ["React", "Chart.js", "API"],
+      category: "Web",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGfVh0sb2Lcgub4A929xVUH4eE-H7ETsDzg&s",
+        "https://th.bing.com/th/id/OIP.ezIXjevm3hGwqpNZsHrhBgHaFj?w=234&h=180&c=7&r=0&o=5&pid=1.7",
       github: "#",
       demo: "#",
-      features: [
-        "5-day weather forecast",
-        "Interactive charts",
-        "Location-based weather",
-        "Weather alerts",
-      ],
+    },
+    {
+      title: "Personal Blog Theme",
+      tech: ["Gatsby", "GraphQL", "SCSS"],
+      category: "Blog",
+      image: "/api/placeholder/400/200",
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "AI Image Generator",
+      tech: ["Python", "TensorFlow", "Flask"],
+      category: "Web",
+      image: "",
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "Travel Blog",
+      tech: ["WordPress", "PHP", "MySQL"],
+      category: "Blog",
+      image: "/api/placeholder/400/200",
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "Portfolio Generator",
+      tech: ["Vue.js", "Firebase", "Vuex"],
+      category: "Web",
+      image: "/api/placeholder/400/200",
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "Recipe Blog",
+      tech: ["Django", "PostgreSQL", "AWS"],
+      category: "Blog",
+      image: "/api/placeholder/400/200",
+      github: "#",
+      demo: "#",
     },
   ];
-  // Previous skills and experience data remain the same...
+
+  const categories = ["All", "Web", "Blog"];
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
+
   return (
-    <>
-      <section id="projects" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center mb-12">
-            <Folder className="w-6 h-6 mr-2 text-blue-600" />
-            <h2 className="text-3xl font-bold">Featured Projects</h2>
+    <section id="projects" className="py-20 bg-black min-h-screen">
+      <div className="container mx-auto px-4">
+        {/* Header Section */}
+        <div className="flex flex-col items-center justify-center mb-16">
+          <div className="flex items-center mb-10">
+            {/* <Folder className="w-8 h-8 mr-3 text-blue-500" /> */}
+            <h2 className="text-4xl font-bold text-white tracking-tight">
+              My Projects
+            </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-1"
+
+          <div className="flex gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-8 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 text-sm font-medium
+                  ${
+                    activeCategory === category
+                      ? "bg-gradient-to-r from-blue-600 to-blue-400 text-white shadow-lg shadow-blue-500/25"
+                      : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 backdrop-blur-sm"
+                  }`}
               >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 w-full max-w-sm mx-auto"
+            >
+              <div className="relative overflow-hidden aspect-[4/3]">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="mb-4">
-                    <h4 className="font-semibold mb-2">Key Features:</h4>
-                    <ul className="list-disc list-inside text-gray-600">
-                      {project.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.demo}
-                      className="flex items-center text-blue-600 hover:text-blue-800"
-                    >
-                      Live Demo <ExternalLink className="ml-1 w-4 h-4" />
-                    </a>
+                {/* Hover Overlay with Centered Buttons */}
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-600/80 to-gray-900/90 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-6">
+                  <div className="flex gap-6 transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100">
                     <a
                       href={project.github}
-                      className="flex items-center text-gray-600 hover:text-gray-800"
+                      className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 group-hover:rotate-12"
+                      aria-label="View Code"
                     >
-                      Code <Github className="ml-1 w-4 h-4" />
+                      <Github className="w-6 h-6" />
+                    </a>
+                    <a
+                      href={project.demo}
+                      className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 group-hover:-rotate-12"
+                      aria-label="Live Preview"
+                    >
+                      <Eye className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-white mb-4 tracking-wide">
+                  {project.title}
+                </h3>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
