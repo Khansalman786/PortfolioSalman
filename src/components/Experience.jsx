@@ -4,9 +4,9 @@ import { FaBriefcase } from 'react-icons/fa';
 const Experience = () => {
   const experiences = [
     {
-      role: 'Frontend Developer',
-      company: 'Tech Solutions Inc.',
-      duration: 'Jan 2020 - Present',
+      role: 'MERN STACK Developer',
+      company: 'Za Charity Feed Foundation',
+      duration: 'Dec 2024 - Jan 2025',
       description: [
         'Developed and maintained responsive web applications using React.js.',
         'Implemented modern UI components with Tailwind CSS to enhance user experience.',
@@ -15,8 +15,8 @@ const Experience = () => {
     },
     {
       role: 'Web Developer Intern',
-      company: 'Innovatech Labs',
-      duration: 'Jun 2019 - Dec 2019',
+      company: 'TopperWorld',
+      duration: 'May 2024 - July 2024',
       description: [
         'Built reusable components and optimized performance in React.js applications.',
         'Designed and styled interactive layouts with Tailwind CSS.',

@@ -36,7 +36,8 @@ const ProjectSection = () => {
       title: "Personal Blog Theme",
       tech: ["Gatsby", "GraphQL", "SCSS"],
       category: "Blog",
-      image: "/api/placeholder/400/200",
+      image:
+        "https://colorlib.com/wp/wp-content/uploads/sites/2/morningtime-minimal-wordpress-blog-theme.jpg",
       github: "#",
       demo: "#",
     },
@@ -44,7 +45,8 @@ const ProjectSection = () => {
       title: "AI Image Generator",
       tech: ["Python", "TensorFlow", "Flask"],
       category: "Web",
-      image: "",
+      image:
+        "https://img.freepik.com/premium-photo/abstract-digital-human-face-artificial-intelligence_999679-1411.jpg",
       github: "#",
       demo: "#",
     },
@@ -52,7 +54,8 @@ const ProjectSection = () => {
       title: "Travel Blog",
       tech: ["WordPress", "PHP", "MySQL"],
       category: "Blog",
-      image: "/api/placeholder/400/200",
+      image:
+        "https://mindfulwonderer.com/wp-content/uploads/2021/01/best-travel-blogs-header-FT.jpg",
       github: "#",
       demo: "#",
     },
@@ -60,15 +63,17 @@ const ProjectSection = () => {
       title: "Portfolio Generator",
       tech: ["Vue.js", "Firebase", "Vuex"],
       category: "Web",
-      image: "/api/placeholder/400/200",
+      image:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/fs/e601cf50668805.58dd8765b8f4b.png",
       github: "#",
       demo: "#",
     },
     {
       title: "Recipe Blog",
-      tech: ["Django", "PostgreSQL", "AWS"],
+      tech: ["Django", "MySQL", "AWS"],
       category: "Blog",
-      image: "/api/placeholder/400/200",
+      image:
+        "https://www.chefspencil.com/wp-content/uploads/Food52-960x640.jpeg",
       github: "#",
       demo: "#",
     },

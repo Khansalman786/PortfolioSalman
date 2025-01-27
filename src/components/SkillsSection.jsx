@@ -9,7 +9,7 @@ const SkillsSection = () => {
       category: "Frontend Development",
       icon: <Code2 className="w-6 h-6" />,
       items: [
-        { name: "React", level: 90 },
+        { name: "React.js", level: 90 },
         { name: "JavaScript", level: 85 },
         { name: "TypeScript", level: 80 },
         { name: "HTML5/CSS3", level: 95 }
@@ -19,18 +19,18 @@ const SkillsSection = () => {
       category: "UI/UX",
       icon: <Palette className="w-6 h-6" />,
       items: [
-        { name: "Tailwind CSS", level: 88 },
-        { name: "Material UI", level: 82 },
-        { name: "Responsive Design", level: 92 },
-        { name: "CSS Animation", level: 78 }
+        { name: "Tailwind CSS", level: 89 },
+        { name: "Bootstrap CSS", level: 87 },
+        { name: "Responsive Design", level: 85 },
+        { name: "Material UI", level: 80 }
       ]
     },
     {
       category: "Backend Development",
       icon: <Server className="w-6 h-6" />,
       items: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 82 },
+        { name: "Node.js", level: 87 },
+        { name: "Express.js", level: 85 },
         { name: "RESTful APIs", level: 88 },
         { name: "GraphQL", level: 75 }
       ]
@@ -40,7 +40,7 @@ const SkillsSection = () => {
       icon: <Database className="w-6 h-6" />,
       items: [
         { name: "MongoDB", level: 86 },
-        { name: "PostgreSQL", level: 84 },
+        { name: "MySQL", level: 84 },
         { name: "Redis", level: 78 },
         { name: "Firebase", level: 80 }
       ]
